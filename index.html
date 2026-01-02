@@ -27,10 +27,18 @@
       background: #111;
     }
 
+    /* LOGO */
+    .logo {
+      display: block;
+      max-width: 180px;
+      margin: 0 auto 16px auto;
+    }
+
     h2 {
       margin-top: 0;
       margin-bottom: 18px;
       font-size: 20px;
+      text-align: center;
     }
 
     label {
@@ -68,7 +76,6 @@
       background: #6d28d9;
     }
 
-    /* ⬇️ TEXT O OCHRANĚ DAT */
     .note {
       margin-top: 14px;
       font-size: 11px;
@@ -82,6 +89,14 @@
 <body>
 
   <div class="card">
+
+    <!-- LOGO -->
+    <img
+      src="https://raw.githubusercontent.com/lukasmarthin-hub/doraznik-luxor/main/logo.jpg"
+      alt="Luxor Club"
+      class="logo"
+    >
+
     <h2>Kontaktní dotazník</h2>
 
     <form method="POST" action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec">
@@ -100,11 +115,11 @@
       <button type="submit">Odeslat</button>
     </form>
 
-    <!-- ⬇️ TEXT PRO LIDI -->
     <div class="note">
       Vaše údaje jsou chráněny a slouží pouze pro interní účely.<br>
       Ostatní účastníci k nim nemají přístup.
     </div>
+
   </div>
 
 </body>
