@@ -109,4 +109,70 @@
   <!-- FORM -->
   <div id="formBox">
     <img
-      src="https://raw.githubusercontent.com/lukasmarthin-hub/doraznik-luxor/main/logo.jp
+      src="https://raw.githubusercontent.com/lukasmarthin-hub/doraznik-luxor/main/logo.jpg"
+      alt="Luxor Club"
+      class="logo"
+    >
+
+    <h2>Kontaktní dotazník</h2>
+
+    <form
+      method="POST"
+      target="hiddenFrame"
+      action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec"
+      onsubmit="handleSubmit(this)"
+    >
+      <label>Jméno</label>
+      <input name="jmeno" required>
+
+      <label>Telefon</label>
+      <input name="telefon" required>
+
+      <label>Email</label>
+      <input name="email" type="email" required>
+
+      <label>PIN (4 číslice)</label>
+      <input name="pin" type="password" pattern="[0-9]{4}" required>
+
+      <button type="submit" id="submitBtn">
+        <span id="btnText">Odeslat</span>
+      </button>
+
+      <div class="note">
+        Vaše údaje jsou chráněny a nejsou viditelné ostatním.</br>
+        Děkujeme
+      </div>
+    </form>
+  </div>
+
+  <!-- THANK YOU -->
+  <div id="thanksBox" class="thanks">
+    <h2>Děkujeme za spolupráci 🙏</h2>
+    <p>Vaše údaje byly úspěšně odeslány.</p>
+  </div>
+
+</div>
+
+<iframe name="hiddenFrame" style="display:none;"></iframe>
+
+<script>
+  function handleSubmit(form) {
+    const btn = document.getElementById("submitBtn");
+    const text = document.getElementById("btnText");
+
+    btn.disabled = true;
+    text.textContent = "Odesílám…";
+
+    const spinner = document.createElement("div");
+    spinner.className = "spinner";
+    btn.appendChild(spinner);
+
+    setTimeout(() => {
+      document.getElementById("formBox").style.display = "none";
+      document.getElementById("thanksBox").style.display = "block";
+    }, 800);
+  }
+</script>
+
+</body>
+</html>
