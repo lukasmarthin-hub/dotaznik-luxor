@@ -26,21 +26,17 @@
  body {
   margin: 0;
   padding: 0;
-  min-height: 100svh;
   background: #000;
   font-family: system-ui, Arial;
   color: #fff;
 }
-  .card {
+.card {
   width: 100%;
   max-width: 420px;
-  background: #111;
+  margin: 6vh auto 0 auto; /* výš na mobilu + přesný střed */
   padding: 28px;
   border-radius: 16px;
-
-  margin-left: 5vh;
-  margin-right: 5vh;
-  margin-top: 8vh;
+  background: #111;
 }
   label { font-size: 13px; opacity: .7; display:block; margin-top:16px; }
   input {
@@ -121,6 +117,7 @@ document.getElementById("f").addEventListener("submit", async e => {
 
 </body>
 </html>
+
 
 
 
