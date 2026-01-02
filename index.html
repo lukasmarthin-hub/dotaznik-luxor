@@ -13,51 +13,54 @@
       color: #fff;
     }
 
+    /* OPRAVA – box sizing jen tam, kde je potřeba */
+    input,
+    button {
+      box-sizing: border-box;
+    }
+
     .card {
-  width: 100%;
-  max-width: 430px;
-  margin: 5vh auto 0 auto;
-  padding: 24px;       /* 👈 menší */
-  border-radius: 16px;
-  background: #111;
-}
+      width: 100%;
+      max-width: 380px;      /* 👈 VÝRAZNĚ MENŠÍ */
+      margin: 4vh auto 0 auto;
+      padding: 20px;         /* 👈 MENŠÍ */
+      border-radius: 14px;
+      background: #111;
+    }
 
     h2 {
       margin-top: 0;
-      margin-bottom: 24px;
+      margin-bottom: 18px;   /* 👈 MENŠÍ */
+      font-size: 20px;       /* 👈 MENŠÍ */
     }
 
     label {
       display: block;
-      font-size: 13px;
-      opacity: 0.8;
-      margin-top: 16px;
-      margin-bottom: 6px;
+      font-size: 12px;       /* 👈 MENŠÍ */
+      opacity: 0.75;
+      margin-top: 14px;      /* 👈 MENŠÍ */
+      margin-bottom: 4px;
     }
 
     input {
       width: 100%;
-      padding: 14px;
-      border-radius: 10px;
+      padding: 10px;         /* 👈 MENŠÍ */
+      border-radius: 8px;
       border: 1px solid #333;
       background: #000;
       color: #fff;
-      font-size: 15px;
-      input,
-button {
-  box-sizing: border-box;
-}
+      font-size: 14px;       /* 👈 MENŠÍ */
     }
 
     button {
-      margin-top: 24px;
+      margin-top: 18px;      /* 👈 MENŠÍ */
       width: 100%;
-      padding: 14px;
-      border-radius: 12px;
+      padding: 11px;         /* 👈 MENŠÍ */
+      border-radius: 10px;
       border: none;
       background: #7c3aed;
       color: #fff;
-      font-size: 16px;
+      font-size: 15px;       /* 👈 MENŠÍ */
       font-weight: 600;
       cursor: pointer;
     }
@@ -92,9 +95,3 @@ button {
 
 </body>
 </html>
-
-
-
-
-
-
