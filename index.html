@@ -99,7 +99,16 @@
 
     <h2>Kontaktní dotazník</h2>
 
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec">
+    <form
+  method="POST"
+  action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec"
+  onsubmit="
+    const b = this.querySelector('button');
+    b.disabled = true;
+    b.innerText = 'Odesílám…';
+  "
+>
+
       <label>Jméno</label>
       <input name="jmeno" required>
 
@@ -125,6 +134,7 @@
 
 </body>
 </html>
+
 
 
 
