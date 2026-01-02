@@ -27,11 +27,11 @@
   }
 
   .thanks {
-    display: none;
-    padding: 40px 20px;
-    text-align: center;
-    animation: fadeUp 0.6s ease-out forwards;
-  }
+  display: none;
+  padding: 40px 20px;
+  text-align: center;
+  opacity: 0;
+}
 </style>
 
 
@@ -188,22 +188,31 @@
     const btn = document.getElementById("submitBtn");
     const text = document.getElementById("btnText");
 
+    // zamknutí tlačítka
     btn.disabled = true;
     text.textContent = "Odesílám…";
 
+    // spinner
     const spinner = document.createElement("div");
     spinner.className = "spinner";
     btn.appendChild(spinner);
 
     setTimeout(() => {
+      // schovat formulář
       document.getElementById("formBox").style.display = "none";
-      document.getElementById("thanksBox").style.display = "block";
+
+      // zobrazit poděkování + spustit animaci
+      const thanks = document.getElementById("thanksBox");
+      thanks.style.display = "block";
+      thanks.style.animation = "fadeUp 0.6s ease-out forwards";
     }, 800);
   }
 </script>
 
+
 </body>
 </html>
+
 
 
 
