@@ -1,218 +1,179 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <title>Kontaktní dotazník</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Kontaktní dotazník</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-  body {
-    margin: 0;
-    background: #000;
-    font-family: system-ui, Arial, sans-serif;
-    color: #fff;
-  }
+<style>
+body{
+  margin:0;
+  background:#000;
+  font-family:system-ui,Arial,sans-serif;
+  color:#fff;
+}
 
-  /* ostatní styly – card, input, button atd. */
+.card{
+  width:100%;
+  max-width:420px;
+  margin:5vh auto;
+  padding:24px;
+  border-radius:16px;
+  background:#111;
+  box-sizing:border-box;
+  text-align:center;
+}
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+.logo{
+  max-width:200px;
+  margin-bottom:20px;
+}
 
-  .thanks {
-  display: none;
-  padding: 40px 20px;
-  text-align: center;
-  opacity: 0;
+h2{
+  margin:0 0 24px 0;
+  text-align:left;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  opacity:.8;
+  margin-top:16px;
+  margin-bottom:6px;
+  text-align:left;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #333;
+  background:#000;
+  color:#fff;
+  font-size:15px;
+  box-sizing:border-box;
+}
+
+button{
+  margin-top:24px;
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  background:#7c3aed;
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+button:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+.spinner{
+  width:18px;
+  height:18px;
+  border:3px solid rgba(255,255,255,.3);
+  border-top:3px solid #fff;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg);}
+}
+
+.note{
+  margin-top:14px;
+  font-size:12px;
+  opacity:.6;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.thanks{
+  display:none;
+  padding:40px 20px;
+  text-align:center;
+  animation:fadeUp .6s ease-out forwards;
 }
 </style>
-
-
-    .card {
-      width: 100%;
-      max-width: 420px;
-      margin: 5vh auto;
-      padding: 24px;
-      border-radius: 16px;
-      background: #111;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      margin: 0 0 24px 0;
-      text-align: left;
-    }
-
-    label {
-      display: block;
-      font-size: 13px;
-      opacity: 0.8;
-      margin-top: 16px;
-      margin-bottom: 6px;
-      text-align: left;
-    }
-
-    input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #333;
-      background: #000;
-      color: #fff;
-      font-size: 15px;
-      box-sizing: border-box;
-    }
-
-    button {
-      margin-top: 24px;
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      border: none;
-      background: #7c3aed;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    button:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-
-    .spinner {
-      width: 18px;
-      height: 18px;
-      border: 3px solid rgba(255,255,255,0.3);
-      border-top: 3px solid #fff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .note {
-      margin-top: 14px;
-      font-size: 12px;
-      opacity: 0.6;
-    }
-
-    .thanks {
-  display: none;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.thanks h2 {
-  margin-bottom: 12px;
-}
-
-  </style>
 </head>
 
 <body>
 
 <div class="card">
 
-  <!-- FORM -->
-  <div id="formBox">
-    <img
-      src="https://raw.githubusercontent.com/lukasmarthin-hub/doraznik-luxor/main/logo.jpg"
-      alt="Luxor Club"
-      class="logo"
-    >
+<div id="formBox">
+  <img src="https://raw.githubusercontent.com/lukasmarthin-hub/doraznik-luxor/main/logo.jpg"
+       class="logo" alt="Luxor Club">
 
-    <h2>Kontaktní dotazník</h2>
+  <h2>Kontaktní dotazník</h2>
 
-    <form
-      method="POST"
-      target="hiddenFrame"
-      action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec"
-      onsubmit="handleSubmit(this)"
-    >
-      <label>Jméno</label>
-      <input name="jmeno" required>
+  <form
+    method="POST"
+    target="hiddenFrame"
+    action="https://script.google.com/macros/s/AKfycbyzEgDBdArVJyVXuD8oW9SSU5TzzshKXBRhLo5cqrxoYhbSUOvB1ATouyXeBoRm3Fc89A/exec"
+    onsubmit="handleSubmit()">
 
-      <label>Telefon</label>
-      <input name="telefon" required>
+    <label>Jméno</label>
+    <input name="jmeno" required>
 
-      <label>Email</label>
-      <input name="email" type="email" required>
+    <label>Telefon</label>
+    <input name="telefon" required>
 
-      <label>PIN (4 číslice)</label>
-      <input name="pin" type="password" pattern="[0-9]{4}" required>
+    <label>Email</label>
+    <input name="email" type="email" required>
 
-      <button type="submit" id="submitBtn">
-        <span id="btnText">Odeslat</span>
-      </button>
+    <label>PIN (4 číslice)</label>
+    <input name="pin" type="password" pattern="[0-9]{4}" required>
 
-      <div class="note">
-        Vaše údaje jsou chráněny a nejsou viditelné ostatním.</br>
-        Děkujeme
-      </div>
-    </form>
-  </div>
+    <button id="submitBtn" type="submit">
+      <span id="btnText">Odeslat</span>
+    </button>
 
-  <!-- THANK YOU -->
-  <div id="thanksBox" class="thanks">
-    <h2>Děkujeme za spolupráci 🙏</h2>
-    <p>Vaše údaje byly úspěšně odeslány.</p>
-  </div>
+    <div class="note">
+      Vaše údaje jsou chráněny a nejsou viditelné ostatním.
+    </div>
+  </form>
+</div>
+
+<div id="thanksBox" class="thanks">
+  <h2>Děkujeme za spolupráci 🙏</h2>
+  <p>Vaše údaje byly úspěšně odeslány.</p>
+</div>
 
 </div>
 
-<iframe name="hiddenFrame" style="display:none;"></iframe>
+<iframe name="hiddenFrame" style="display:none"></iframe>
 
 <script>
-  function handleSubmit(form) {
-    const btn = document.getElementById("submitBtn");
-    const text = document.getElementById("btnText");
+function handleSubmit(){
+  const btn=document.getElementById("submitBtn");
+  const text=document.getElementById("btnText");
 
-    // zamknutí tlačítka
-    btn.disabled = true;
-    text.textContent = "Odesílám…";
+  btn.disabled=true;
+  text.textContent="Odesílám…";
 
-    // spinner
-    const spinner = document.createElement("div");
-    spinner.className = "spinner";
-    btn.appendChild(spinner);
+  const sp=document.createElement("div");
+  sp.className="spinner";
+  btn.appendChild(sp);
 
-    setTimeout(() => {
-      // schovat formulář
-      document.getElementById("formBox").style.display = "none";
-
-      // zobrazit poděkování + spustit animaci
-      const thanks = document.getElementById("thanksBox");
-      thanks.style.display = "block";
-      thanks.style.animation = "fadeUp 0.6s ease-out forwards";
-    }, 800);
-  }
+  setTimeout(()=>{
+    document.getElementById("formBox").style.display="none";
+    document.getElementById("thanksBox").style.display="block";
+  },800);
+}
 </script>
-
 
 </body>
 </html>
-
-
-
-
