@@ -13,7 +13,6 @@
       color: #fff;
     }
 
-    /* OPRAVA – box sizing jen tam, kde je potřeba */
     input,
     button {
       box-sizing: border-box;
@@ -21,52 +20,61 @@
 
     .card {
       width: 100%;
-      max-width: 380px;      /* 👈 VÝRAZNĚ MENŠÍ */
+      max-width: 380px;
       margin: 4vh auto 0 auto;
-      padding: 20px;         /* 👈 MENŠÍ */
+      padding: 20px;
       border-radius: 14px;
       background: #111;
     }
 
     h2 {
       margin-top: 0;
-      margin-bottom: 18px;   /* 👈 MENŠÍ */
-      font-size: 20px;       /* 👈 MENŠÍ */
+      margin-bottom: 18px;
+      font-size: 20px;
     }
 
     label {
       display: block;
-      font-size: 12px;       /* 👈 MENŠÍ */
+      font-size: 12px;
       opacity: 0.75;
-      margin-top: 14px;      /* 👈 MENŠÍ */
+      margin-top: 14px;
       margin-bottom: 4px;
     }
 
     input {
       width: 100%;
-      padding: 10px;         /* 👈 MENŠÍ */
+      padding: 10px;
       border-radius: 8px;
       border: 1px solid #333;
       background: #000;
       color: #fff;
-      font-size: 14px;       /* 👈 MENŠÍ */
+      font-size: 14px;
     }
 
     button {
-      margin-top: 18px;      /* 👈 MENŠÍ */
+      margin-top: 18px;
       width: 100%;
-      padding: 11px;         /* 👈 MENŠÍ */
+      padding: 11px;
       border-radius: 10px;
       border: none;
       background: #7c3aed;
       color: #fff;
-      font-size: 15px;       /* 👈 MENŠÍ */
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
     }
 
     button:hover {
       background: #6d28d9;
+    }
+
+    /* ⬇️ TEXT O OCHRANĚ DAT */
+    .note {
+      margin-top: 14px;
+      font-size: 11px;
+      line-height: 1.4;
+      text-align: center;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -91,6 +99,12 @@
 
       <button type="submit">Odeslat</button>
     </form>
+
+    <!-- ⬇️ TEXT PRO LIDI -->
+    <div class="note">
+      Vaše údaje jsou chráněny a slouží pouze pro interní účely.<br>
+      Ostatní účastníci k nim nemají přístup.
+    </div>
   </div>
 
 </body>
